@@ -8,4 +8,5 @@ public class ChatRunner
 		ChatController app = new ChatController();
 		app.start();
 	}
+
 }
