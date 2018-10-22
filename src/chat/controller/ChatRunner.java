@@ -1,4 +1,4 @@
-package chat.controller.main;
+package chat.controller;
 
 public class ChatRunner
 {

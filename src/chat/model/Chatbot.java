@@ -1,6 +1,8 @@
-package chat.controller.model;
+package chat.model;
 
-public class ChatModel
+import java.util.ArrayList;
+
+public class Chatbot
 {
 
 	/**
@@ -9,19 +11,64 @@ public class ChatModel
 	 * the chat robot will respond back.
 	 */
 
+	//********************//
+	String joke;
+	String content;
+	String currentUser;
+	//********************//
+
 	//Ask for name, ask how the user is doing, favorite color, ask for a hobby, favorite number, and what would you like to be in the future.
 
-	String name;
+	/*String name;
 	String howAreYou;
 	String favoriteColor;
 	String hobby;
 	int favoriteNumber;
-	String occupation;
+	String occupation;*/
 
+	private ArrayList<String> responseList;
+	private ArrayList<String> spookyList;
 
-	public ChatModel()
+	public Chatbot()
 	{
+		this.joke = "Sticks float, they would.";
+		this.content = new String("Something else.");
+		this.currentUser = new String("big laugh");
 
+		this.responseList = new ArrayList<String>();
+		this.spookyList = new ArrayList<String>();
+
+		buildTheLists();
+	}
+
+	private void buildTheLists()
+	{
+		responseList.add("Hi I am not Kim Jong Un.");
+		responseList.add("What is your favourite movie?");
+		responseList.add("You're just boring.");
+		responseList.add("Scooby doo is the best animated show!");
+		responseList.add("I like Snoopy.");
+		responseList.add("Have you seen cat in the hat?");
+		responseList.add("Do you like pizza?");
+		responseList.add("Which do you prefer Minecraft or Fortnite?");
+		responseList.add("School is an okay place, but I prefer walmart.");
+		responseList.add("I like roblox.");
+
+		spookyList.add("Boo! Scared yuh didn't I?");
+		spookyList.add("What's your favourite scary movie?");
+		spookyList.add("Do you like Werewolfs");
+		spookyList.add("What are you dressing up for this Halloween?");
+		spookyList.add("What's your favourite candy?");
+		spookyList.add("Have you seen the Nightmare Before Christmas?");
+	}
+
+	public String processText(String userText)
+	{
+		String answer = "";
+
+		answer += "You said: " + userText;
+
+		return answer;
 	}
 
 	/**
@@ -33,7 +80,7 @@ public class ChatModel
 	 * @param userFavoriteNumber - Ask for number.
 	 * @param userOccupation - Ask for occupation.
 	 */
-	public ChatModel(String userName, String userHowAreYou, String userFavoriteColor, String userHobby, int userFavoriteNumber, String userOccupation)
+	/*public ChatModel(String userName, String userHowAreYou, String userFavoriteColor, String userHobby, int userFavoriteNumber, String userOccupation)
 	{
 		this.name = userName;
 		this.howAreYou = userHowAreYou;
@@ -101,30 +148,6 @@ public class ChatModel
 	public void setOccupation(String userOccupation)
 	{
 		this.occupation = userOccupation;
-	}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+	}*/
 
 }
