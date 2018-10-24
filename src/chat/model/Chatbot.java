@@ -12,9 +12,9 @@ public class Chatbot
 	 */
 
 	//********************//
-	String joke;
-	String content;
-	String currentUser;
+	private String joke;
+	private String content;
+	private String currentUser;
 	//********************//
 
 	//Ask for name, ask how the user is doing, favorite color, ask for a hobby, favorite number, and what would you like to be in the future.
@@ -39,6 +39,26 @@ public class Chatbot
 		this.spookyList = new ArrayList<String>();
 
 		buildTheLists();
+	}
+
+	public boolean legitimacyChecker(String test)
+	{
+		boolean legit = true;
+
+		if(test == null)
+		{
+			legit = false;
+		}
+		else if (test.length() < 2)
+		{
+			legit = false;
+		}
+		else if (test.contains("sdf") || test.contains("cvb"))
+		{
+			legit = false;
+		}
+
+		return legit;
 	}
 
 	private void buildTheLists()

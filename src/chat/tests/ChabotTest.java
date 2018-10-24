@@ -1,6 +1,8 @@
 package chat.tests;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertTrue;
 
 import org.junit.After;
 import org.junit.Before;
@@ -16,7 +18,7 @@ public class ChabotTest
 	public void setUp() throws Exception
 	{
 		testedBot = new Chatbot();
-		
+
 	}
 
 	@After
@@ -67,15 +69,15 @@ public class ChabotTest
 		}
 		assertFalse("Easter should return false", testedBot.spookyChecker("Easter"));
 	}
-	
-	
+
+
 	@Test
 	public void testLegitimacyChecker()
 	{
 		assertFalse("Null should return false", testedBot.legitimacyChecker(null));
 		assertFalse("Empty string should return false", testedBot.legitimacyChecker(""));
 		assertFalse("Keyboard mash should return false", testedBot.legitimacyChecker("asdfghjkl"));
-		assertTrue("Strings more than 1 letter should return true", testedBot.legitimacyChecker("a"));
+		assertTrue("Strings more than 1 letter should return true", testedBot.legitimacyChecker("aa"));
 	}
 
 	@Test
@@ -91,17 +93,17 @@ public class ChabotTest
 	@Test
 	public void testGetSpookyList()
 	{
-		 assertNotNull("You really need to initialize the spookyList", testedBot.getSpookyList());
-		 assertTrue("You need to have more than 8 items in the spookyList", testedBot.getSpookyList().size() > 8);
-		 assertTrue("The first item in your list has to mention Halloween", testedBot.getSpookyList().get(0).contains("Halloween"));
+		assertNotNull("You really need to initialize the spookyList", testedBot.getSpookyList());
+		assertTrue("You need to have more than 8 items in the spookyList", testedBot.getSpookyList().size() > 8);
+		assertTrue("The first item in your list has to mention Halloween", testedBot.getSpookyList().get(0).contains("Halloween"));
 	}
-	
+
 	@Test
 	public void testGetResponseList()
 	{
-		 assertNotNull("You really need to initialize the responseList", testedBot.getResponseList());
-		 assertTrue("You need to have more than 15 items in the repsonseList", testedBot.getResponseList().size() > 15);
-		 assertTrue("The first item in your list has to mention Hello", testedBot.getResponseList().get(0).contains("Hello"));
+		assertNotNull("You really need to initialize the responseList", testedBot.getResponseList());
+		assertTrue("You need to have more than 15 items in the repsonseList", testedBot.getResponseList().size() > 15);
+		assertTrue("The first item in your list has to mention Hello", testedBot.getResponseList().get(0).contains("Hello"));
 	}
 
 	@Test
