@@ -61,6 +61,33 @@ public class Chatbot
 		return legit;
 	}
 
+	public boolean testChatController(String test)
+	{
+		return false;
+	}
+
+	public boolean testSpookyChecker(String test)
+	{
+		if(test.contains("Halloween"))
+		{
+			return true;
+		}else if(test.contains("Spooky"))
+		{
+			return true;
+		}else
+		{
+			return false;
+		}
+
+		for(String spookyList; spookyList++)
+		{
+			if(test.contains(Spooky String))
+			{
+
+			}
+		}
+	}
+
 	private void buildTheLists()
 	{
 		responseList.add("Hi I am not Kim Jong Un.");
@@ -91,83 +118,14 @@ public class Chatbot
 		return answer;
 	}
 
-	/**
-	 * This defines the parameters.
-	 * @param userName - Ask for user name.
-	 * @param userHowAreYou - Ask how user is.
-	 * @param userFavoriteColor - Ask for color.
-	 * @param userHobby - Ask for hobby.
-	 * @param userFavoriteNumber - Ask for number.
-	 * @param userOccupation - Ask for occupation.
-	 */
-	/*public ChatModel(String userName, String userHowAreYou, String userFavoriteColor, String userHobby, int userFavoriteNumber, String userOccupation)
+	public ArrayList<String> getResponseList()
 	{
-		this.name = userName;
-		this.howAreYou = userHowAreYou;
-		this.favoriteColor = userFavoriteColor;
-		this.hobby = userHobby;
-		this.favoriteNumber = userFavoriteNumber;
-		this.occupation = userOccupation;
+		return responseList;
 	}
 
-	public String getName()
+	public ArrayList<String> getSpookyList()
 	{
-		return name;
+		return spookyList;
 	}
-
-	public String getFeeling()
-	{
-		return howAreYou;
-	}
-
-	public String getColor()
-	{
-		return favoriteColor;
-	}
-
-	public String getHobby()
-	{
-		return hobby;
-	}
-
-	public int getNumber()
-	{
-		return favoriteNumber;
-	}
-
-	public String getOccupation()
-	{
-		return occupation;
-	}
-
-	public void setName(String userName)
-	{
-		this.name = userName;
-	}
-
-	public void setFeeling(String userHowAreYou)
-	{
-		this.howAreYou = userHowAreYou;
-	}
-
-	public void setColor(String userFavoriteColor)
-	{
-		this.favoriteColor = userFavoriteColor;
-	}
-
-	public void setHobby(String userHobby)
-	{
-		this.hobby = userHobby;
-	}
-
-	public void setNumber(int userFavoriteNumber)
-	{
-		this.favoriteNumber = userFavoriteNumber;
-	}
-
-	public void setOccupation(String userOccupation)
-	{
-		this.occupation = userOccupation;
-	}*/
 
 }
