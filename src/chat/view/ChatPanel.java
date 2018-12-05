@@ -2,6 +2,8 @@ package chat.view;
 
 import java.awt.Color;
 import java.awt.Dimension;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
 import javax.swing.JPanel;
@@ -93,7 +95,19 @@ public class ChatPanel extends JPanel
 
 	public void setupListeners()
 	{
-
+		chatButton.addActionListener(new ActionListener()
+		{
+			@Override
+			public void actionPerformed(ActionEvent click)
+			{
+				String input = chatField.getText();
+				String output = "";
+				output = appController.interactWithChatbot(input);
+				chatArea.append(output);
+				chatField.setText("");
+				chatArea.setCaretPosition(chatArea.getDocument().getLength());
+			}
+		});
 	}
 
 }

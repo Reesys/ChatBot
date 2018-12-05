@@ -18,36 +18,48 @@ public class ChatController
 
 	public void start()
 	{
-		quit();
+
 	}
 
-	public void useChatbotCheckers(String text)
+	public String useChatbotCheckers(String text)
 	{
-		boolean isValid = false;
+		String testedValues = "The following checkers passed: ";
+		if(simpleBot.contentChecker(text))
+		{
+			testedValues += "\nContent Checker";
+		}
+		if(simpleBot.spookyChecker(text))
+		{
+			testedValues += "\nSpooky Checker Happy Halloween";
+		}
+		if(simpleBot.legitimacyChecker(text))
+		{
+			testedValues += "\nValidityCheker";
+		}
+
+		return testedValues;
+
+		/*boolean isValid = false;
 
 		if(text.contains("spooky"))
 		{
 			isValid = true;
-		}
+		}*/
 
-	}
-
-	public void quit()
-	{
-		String userInput = "";
-		while (!userInput.equals("quit"))
-		{
-			userInput = JOptionPane.showInputDialog(null, "zac is a coolcat");
-		}
 	}
 
 	public String interactWithChatbot(String text)
 	{
 		String output = "";
-		String userResponse = JOptionPane.showInputDialog(null, "Hi whats up??");
-		output = simpleBot.processText(userResponse);
+		//String userResponse = JOptionPane.showInputDialog(null, "Hi whats up??");
+		output += simpleBot.processText(text);
 
 		return output;
+	}
+
+	public void handleerrors(Exception error)
+	{
+		JOptionPane.showMessageDialog(appFrame, error.getMessage());
 	}
 
 	public Chatbot getChatbot()
