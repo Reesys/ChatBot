@@ -48,6 +48,11 @@ public class ChatController
 
 	}
 
+	public void handleErrors(Exception error)
+	{
+		JOptionPane.showMessageDialog(appFrame, error.getMessage());
+	}
+
 	public String interactWithChatbot(String text)
 	{
 		String output = "";

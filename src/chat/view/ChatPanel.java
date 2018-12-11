@@ -119,7 +119,7 @@ public class ChatPanel extends JPanel
 			{
 
 				String chatText = chatArea.getText();
-				String path = "";
+				String path = ".";
 				IOController.saveText(appController, path, chatText);
 				chatArea.setText("Chat Saved!");
 			}
