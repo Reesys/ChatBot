@@ -19,6 +19,7 @@ public class ChatPanel extends JPanel
 	private ChatController appController;
 	private SpringLayout appLayout;
 	private JButton chatButton;
+	private JButton resetButton;
 	private JButton checkerButton;
 	private JButton loadButton;
 	private JButton saveButton;
@@ -107,7 +108,19 @@ public class ChatPanel extends JPanel
 				chatField.setText("");
 				chatArea.setCaretPosition(chatArea.getDocument().getLength());
 			}
+
 		});
+
+		resetButton.addActionListener(new ActionListener()
+		{
+			@Override
+			public void actionPerformed(ActionEvent click)
+			{
+				chatArea.setText("");
+			}
+		});
+
+
 	}
 
 }
