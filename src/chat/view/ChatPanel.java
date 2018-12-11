@@ -13,6 +13,7 @@ import javax.swing.JTextField;
 import javax.swing.SpringLayout;
 
 import chat.controller.ChatController;
+import chat.controller.IOController;
 
 public class ChatPanel extends JPanel
 {
@@ -111,12 +112,16 @@ public class ChatPanel extends JPanel
 
 		});
 
-		resetButton.addActionListener(new ActionListener()
+		saveButton.addActionListener(new ActionListener()
 		{
 			@Override
 			public void actionPerformed(ActionEvent click)
 			{
-				chatArea.setText("");
+
+				String chatText = chatArea.getText();
+				String path = "";
+				IOController.saveText(appController, path, chatText);
+				chatArea.setText("Chat Saved!");
 			}
 		});
 
