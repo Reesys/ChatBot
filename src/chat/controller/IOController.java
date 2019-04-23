@@ -76,4 +76,9 @@ public class IOController
 		}
 		return contents;
 	}
+
+	public static void savTextWithResources(ChatController app, String path, String textToSave)
+	{
+
+	}
 }

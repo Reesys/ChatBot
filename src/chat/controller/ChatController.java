@@ -10,7 +10,7 @@ public class ChatController
 	private ChatFrame appFrame;
 	private Chatbot simpleBot;
 
-	public void Chatbot()
+	public ChatController()
 	{
 		simpleBot = new Chatbot();
 		appFrame = new ChatFrame(this);
