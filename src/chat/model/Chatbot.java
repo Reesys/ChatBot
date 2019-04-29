@@ -151,7 +151,7 @@ public class Chatbot
 
 		String answer = "";
 
-		answer += "You said: " + userText + ". Chatbot says: " + responseList;
+		answer += "You said: " + userText + ". Chatbot says: " + responseList.get(randomIndex);
 
 		if(userText != null && userText.contains(content))
 		{
