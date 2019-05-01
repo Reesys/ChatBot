@@ -45,7 +45,7 @@ public class ChatTwitter
 	{
 		try
 		{
-			chatTwitter.updateStatus(textToTweet + " @ChatbotCTEC");
+			chatTwitter.updateStatus(textToTweet + tweetEnd);
 		}
 		catch(TwitterException tweetError)
 		{
@@ -132,7 +132,7 @@ public class ChatTwitter
 		String fileText = IOController.loadFile(app, "commonWords.txt");
 		int wordCount = 0;
 
-		Scanner wordScanner = new Scanner(fileText);
+		Scanner wordScanner = new Scanner(this.getClass().getResourceAsStream("data/commonWords.txt"));
 
 		while(wordScanner.hasNextLine())
 		{

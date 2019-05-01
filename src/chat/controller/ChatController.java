@@ -2,18 +2,21 @@ package chat.controller;
 
 import javax.swing.JOptionPane;
 
+import chat.model.ChatTwitter;
 import chat.model.Chatbot;
 import chat.view.ChatFrame;
 
 public class ChatController
 {
 	private ChatFrame appFrame;
+	private ChatTwitter myTwitter;
 	private Chatbot simpleBot;
 
 	public ChatController()
 	{
 		simpleBot = new Chatbot();
 		appFrame = new ChatFrame(this);
+		myTwitter = new ChatTwitter(this);
 	}
 
 	public void start()
@@ -67,9 +70,19 @@ public class ChatController
 		JOptionPane.showMessageDialog(appFrame, error.getMessage());
 	}
 
+	public ChatFrame getAppFrame()
+	{
+		return appFrame;
+	}
+
 	public Chatbot getChatbot()
 	{
 		return simpleBot;
+	}
+
+	public void tweet(String text)
+	{
+		myTwitter.sendTweet(text);
 	}
 
 }
